@@ -8,4 +8,5 @@ VOLUME ["/go/src"]
 VOLUME ["/go/output"]
 WORKDIR /go/src
 # ENTRYPOINT ../report -p $path -e $except -r /go/output -f html
-ENTRYPOINT ["/bin/sh", "-c"]
+ENTRYPOINT ["/bin/bash", "-c"]
+CMD [ "/bin/bash" ]
