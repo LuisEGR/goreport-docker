@@ -1,4 +1,4 @@
-FROM golang:1.14.9-stretch
+FROM golang:1.15-buster
 RUN apt-get update && apt-get install -y graphviz
 RUN go get -u github.com/360EntSecGroup-Skylar/goreporter
 WORKDIR /go/src/github.com/360EntSecGroup-Skylar/goreporter
