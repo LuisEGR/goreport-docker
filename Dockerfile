@@ -4,9 +4,10 @@ RUN go get -u github.com/360EntSecGroup-Skylar/goreporter
 WORKDIR /go/src/github.com/360EntSecGroup-Skylar/goreporter
 RUN ["go", "build", "main.go"]
 RUN mv main /bin/goreport
-VOLUME ["/go/src"]
-VOLUME ["/go/output"]
+# VOLUME ["/go/src"]
+# VOLUME ["/go/output"]
+RUN mkdir /go/src
+RUN mkdir /go/output
 WORKDIR /go/src
 # ENTRYPOINT ../report -p $path -e $except -r /go/output -f html
 ENTRYPOINT ["/bin/bash", "-c"]
-CMD [ "/bin/bash" ]
