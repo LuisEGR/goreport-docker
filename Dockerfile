@@ -6,8 +6,8 @@ RUN ["go", "build", "main.go"]
 RUN mv main /bin/goreport
 # VOLUME ["/go/src"]
 # VOLUME ["/go/output"]
-RUN mkdir /go/src
-RUN mkdir /go/output
+# RUN mkdir /go/src
+RUN mkdir -p /go/output
 WORKDIR /go/src
 # ENTRYPOINT ../report -p $path -e $except -r /go/output -f html
 ENTRYPOINT ["/bin/bash", "-c"]
